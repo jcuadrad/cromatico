@@ -21,6 +21,40 @@ import arkit from './assets/tech/arkit.png';
 import './App.css';
 
 class App extends Component {
+  
+  constructor (props) {
+    super(props)
+    this.state = {
+      transform: 0,
+      coverElements: null
+    }
+    this.myRef = React.createRef();
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll, true);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll, true);
+  }
+
+  handleScroll = () => {
+    let windowScroll = window.scrollY;
+    let itemTranslate = -1 * windowScroll/10;
+
+    this.setState({
+      transform: itemTranslate
+    });
+  }
+
+  move = () => {
+    const div =  document.getElementById("cover-elements");
+    const moveByY = (this.props.position.y - div.offsetTop) + div.clientHeight/2;
+    const moveByX = (this.props.position.x - div.offsetLeft);
+    div.style.transform = `translate(${moveByX/1000}%, ${moveByY/1000}%)`;
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,7 +74,7 @@ class App extends Component {
           <button>Learn more</button>
           <div className="parallax-image-container">
             <img src={cover} className="cover-image" alt="cover" />
-            <img src={coverElements} className="cover-image" alt="cover" />
+            <img src={coverElements} onMouseMove={() => this.move()} id="cover-elements" alt="cover" style={{transform: 'translateY(' + this.state.transform + 'px)'}} ref={this.myRef}/>
           </div>
         </div>
         <div id="why">
