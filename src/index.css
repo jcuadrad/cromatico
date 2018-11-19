@@ -1,10 +1,13 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   font-family: 'Montserrat'
 }
 
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -12,17 +15,43 @@ body, html {
   height: 100%;
 }
 
+h1 {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 1;
+  color: #383838;
+  margin: 0;
+}
+
+p {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+button {
+  background: none;
+  border: 2px solid #5700df;
+  background-color: #5700df;
+  padding: 9px 29px;
+  border-radius: 500px;
+  font-size: 16px;
+  color: white;
+  box-shadow: -9px 9px 17px -4px rgba(133, 133, 133, 1);
+  cursor: pointer;
+}
+
 /* Nav Header */
 
 
 .header {
   width: 100%;
-  height: 95px;
-  padding: 9px 100px;
+  height: 139px;
+  padding: 24px 255px;
 }
 
 #nav-logo {
   float: left;
+  margin-left: 14px;
 }
 
 #main-menu {
@@ -33,6 +62,196 @@ body, html {
   height: 100%;
 }
 
-#main-menu > * {
-  margin: 0 17px;
+#main-menu>* {
+  margin: 0px 13px;
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+  color: #383838;
+}
+
+#main-menu button {
+  background: none;
+  border: 2px solid #5700df;
+  padding: 5px 25px;
+  border-radius: 500px;
+  font-size: 15px;
+  color: #5700df;
+  background-color: white;
+  box-shadow: none;
+  transition: background-color .6s, color .6s;
+}
+
+#main-menu button:hover {
+  background-color: #5700df;
+  color: white;
+}
+
+/* Cover */
+
+.cover {
+  min-height: 773px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover .parallax-image-container {
+  width: 764px;
+  min-height: 540px;
+  margin-top: 48px;
+  position: relative;
+}
+
+.parallax-image-container img {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cover h1 {
+  margin-top: 54px;
+}
+
+.cover button {
+  transition: transform 0.2s;
+}
+
+.cover button:hover {
+  transform: scale(1.05);
+}
+
+/* Why */
+
+#why {
+  min-height: 367px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#why h1 {
+  position: relative;
+}
+
+#why h1 span {
+  background-color: rgba(138, 43, 226, 0.2);
+  width: 605px;
+  height: 24px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+/* How */
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 40%;
+  padding-right: 117px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 40%;
+  padding-left: 117px;
+}
+
+.left h2 {
+  font-weight: 300;
+  font-size: 55px;
+  margin: 0;
+  padding-right: 102px;
+}
+
+.left p {
+  text-align: end;
+}
+
+.right h2 {
+  font-weight: 300;
+  font-size: 55px;
+  margin: 0;
+}
+
+.right p {
+  text-align: end;
+  padding-right: 64px;
+}
+
+#storytelling, #immersive, #beauty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 25px 178px;
+  margin-bottom: 173px;
+}
+
+#storytelling img {
+  width: 50%;
+  /* width: 675px; */
+}
+
+#beauty img {
+  width: 50%;
+  /* width: 675px; */
+}
+
+#immersive img {
+  width: 50%;
+  /* width: 675px; */
+}
+
+/* Tech */
+
+#technologies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#technologies h1 {
+  position: relative;
+  margin-right: 96px;
+}
+
+#technologies h1 span {
+  background-color: rgb(38, 201, 255, 0.5);
+  width: 221px;
+  height: 24px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  flex-wrap: wrap;
+}
+
+.grid img {
+  width: 112px;
+  margin: 38px 89px;
 }
