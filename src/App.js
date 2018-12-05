@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import * as scrollToElement from 'scroll-to-element';
+import { slide as Menu } from 'react-burger-menu';
 
 /* Images */
 import logo from './assets/Logo.png';
@@ -71,8 +73,8 @@ class App extends Component {
   }
 
 
-  handleScrollToElement(event) {
-    this.what.current.scrollIntoView({behaviour: 'smooth'})
+  handleScrollToElement(id) {
+    scrollToElement(id);
   }
 
 
@@ -86,13 +88,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* <Menu right noOverlay>
+            <p className="link" onClick={() => this.handleScrollToElement('#why')}>What we do</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who we are</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Public projects</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Our partners</p>
+            <button>Contact us</button>
+        </Menu> */}
         <header className="header">
           <img src={logo} className="App-logo" alt="logo" id="nav-logo" />
           <div id="main-menu">
-            <p className="link" onClick={() => this.handleScrollToElement()}>What we do</p>
-            <p className="link">Who we are</p>
-            <p className="link">Public projects</p>
-            <p className="link">Our partners</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#why')}>What we do</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who we are</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Public projects</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Our partners</p>
             <button>Contact us</button>
           </div>
         </header>
@@ -246,9 +255,7 @@ class App extends Component {
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus non ante sed lacinia. Sed nulla lorem, 
                         accumsan sed libero quis, euismod fermentum nunc. Cras posuere ac est a porttitor. Aenean eget iaculis massa. 
                         Praesent scelerisque libero laoreet, vulputate neque sit amet, viverra metus. Aenean ut lectus id lorem posuere 
-                        placerat eget ac neque. Nulla vel vehicula eros. In hac habitasse platea dictumst. Vivamus et vehicula augue. 
-                        Vestibulum lobortis nec metus at sodales. Pellentesque fringilla ultrices metus vitae fringilla. Praesent nec 
-                        volutpat ipsum. Integer finibus turpis nisi. Phasellus dapibus sapien quis molestie imperdiet.</p>
+                        placerat eget ac neque.</p>
                         <div className="button">
                           <div className="button-background"></div>
                           <div className="button-text">
@@ -288,8 +295,7 @@ class App extends Component {
                       <h2>Project ZYX</h2>
                     </div>
                     <div className="project-description">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus non ante sed lacinia. Sed nulla lorem, 
-                        accumsan sed libero quis, euismod fermentum nunc.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus non ante sed lacinia. Sed nulla lorem.</p>
                         <div className="button">
                           <div className="button-background"></div>
                           <div className="button-text">
