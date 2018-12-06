@@ -4,9 +4,11 @@ import { slide as Menu } from 'react-burger-menu';
 
 /* Images */
 import logo from './assets/Logo.png';
-import cover from './assets/parallax/Capa3_4.png';
-import hoverEl from './assets/parallax/Capa2_4.png';
-import scorllEl from './assets/parallax/Capa1_4.png';
+
+import cover from './assets/parallax/Capa1.png';
+import hoverEl from './assets/parallax/Capa3.png';
+import scorllEl from './assets/parallax/Capa2.png';
+
 import story from './assets/story.png';
 import beauty from './assets/beauty.png';
 import immersive from './assets/immersive.png';
@@ -16,7 +18,7 @@ import unity from './assets/tech/Unity.png';
 import unreal from './assets/tech/Unreal.png';
 import oculus from './assets/tech/Oculus.png';
 import htc from './assets/tech/Htc.png';
-import js from './assets/tech/js.png';
+import js from './assets/tech/Js.png';
 import aframe from './assets/tech/A-frame.png';
 import reactLogo from './assets/tech/React.png';
 import arkit from './assets/tech/arkit.png';
@@ -111,8 +113,8 @@ class App extends Component {
           <button>Learn more</button>
           <div className="parallax-image-container" onMouseMove={() => this.move()} >
             <img src={cover} className="cover-image" alt="cover" />
+            <img src={scorllEl} alt="cover" style={{transform: 'translateY(' + this.state.transform + 'px)'}} ref={this.myRef} id="scroll"/>
             <img src={hoverEl} id="cover-elements" alt="cover" ref={this.myRef}/>
-            <img src={scorllEl} alt="cover" style={{transform: 'translateY(' + this.state.transform + 'px)'}} ref={this.myRef}/>
           </div>
         </div>
         <div id="why" ref={this.what}>
@@ -143,8 +145,8 @@ class App extends Component {
         <div id="technologies">
           <div className="title">
             <h1>Obssesed with tech<span></span></h1>
-            <p>and we have mastered the tools for the job.</p>
           </div>
+          <p>We have mastered the tools for the job.</p>
           <p>We develop with state of the art frameworks for all the leading platforms in the world.</p>
           <div className="grid">
             <img src={unity} alt="unity"/>
