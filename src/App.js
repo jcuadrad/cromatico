@@ -18,7 +18,7 @@ import unity from './assets/tech/Unity.png';
 import unreal from './assets/tech/Unreal.png';
 import oculus from './assets/tech/Oculus.png';
 import htc from './assets/tech/Htc.png';
-import js from './assets/tech/Js.png';
+import js from './assets/tech/js.png';
 import aframe from './assets/tech/A-frame.png';
 import reactLogo from './assets/tech/React.png';
 import arkit from './assets/tech/arkit.png';
