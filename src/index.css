@@ -1098,12 +1098,6 @@ button:hover {
 }
 
 @media (max-width: 414px) {
-  .App {
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
   .header {
     padding: 20px 26px;
   }
