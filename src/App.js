@@ -88,13 +88,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Menu right noOverlay>
+        <Menu right noOverlay>
             <p className="link" onClick={() => this.handleScrollToElement('#why')}>What we do</p>
             <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who we are</p>
             <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Public projects</p>
             <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Our partners</p>
             <button>Contact us</button>
-        </Menu> */}
+        </Menu>
         <header className="header">
           <img src={logo} className="App-logo" alt="logo" id="nav-logo" />
           <div id="main-menu">

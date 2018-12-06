@@ -538,6 +538,8 @@ button:hover {
   background-color: #5700df;
   overflow: hidden;
   position: relative;
+
+  transition: width .4s;
 }
 
 .second-project .project-info {
@@ -836,10 +838,6 @@ button:hover {
 }
 
 @media (max-width: 1440px) {
-  .bm-burger-button {
-    display: unset;
-  }
-
   .header {
     padding: 24px 168px;
   }
@@ -874,6 +872,414 @@ button:hover {
 
   .third-project:hover {
     width: 85%;
+  }
+  
+}
+
+@media (max-width: 1200px) {
+  .bm-burger-button {
+    display: unset;
+  }
+
+  #main-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bm-burger-button {
+    right: 77px;
+    top: 71px;
+  }
+
+  .header {
+    padding: 50px 58px 0 58px;
+  }
+
+  .left {
+    padding-right: 0;
+    width: auto;
+  }
+
+  .left h2 {
+    text-align: end;
+  }
+
+  #storytelling, #immersive, #beauty {
+    padding: 25px 60px;
+  }
+
+  #storytelling img, #immersive img {
+    width: 420px;
+    margin-left: 88px;
+  }
+
+  .grid img {
+    width: 90px;
+    margin: 25px 50px;
+  } 
+
+  #projects {
+    padding: 25px 60px;
+  }
+
+  #projects .description {
+    padding: 37px 50px;
+  }
+
+  .project-info {
+    padding: 50px 40px;
+  }
+
+  .third-project .project-info {
+    padding: 15px 27px;
+  }
+
+  #partners {
+    flex-direction: column;
+  }
+
+  #partners h2 {
+    margin-right: 0;
+  }
+
+  .footer-logo {
+    margin-left: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .cover .parallax-image-container {
+    width: 600px;
+    margin-top: 114px;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #why, #technologies, #team, #projects {
+    width: 700px;
+    min-height: 275px;
+  }
+
+  #why h1 span {
+    width: 389px;
+    right: 155px;
+  }
+
+  #storytelling, #immersive {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 100px;
+  }
+
+  #beauty {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin-bottom: 115px;
+  }
+
+  #beauty img {
+    width: 583px;
+    margin-right: 57px;
+  }
+
+  #storytelling img {
+    width: 509px;
+    margin-left: 139px;
+    margin-top: 20px;
+  }
+
+  #immersive img {
+    margin-left: 0;
+    margin-top: 45px;
+  }
+
+  .right {
+    align-items: flex-end;
+    width: 100%;
+  } 
+
+  .left {
+    align-items: center;
+  }
+
+  .left p {
+    text-align: center;
+  }
+
+  .title {
+    align-items: center;
+  }
+
+  #technologies h1 {
+    margin-right: 0;
+  }
+
+  .grid img {
+    width: 80px;
+    margin: 25px 25px;
+  }
+
+  .member {
+    height: 410px;
+  }
+
+  .member img {
+    height: 100%;
+  } 
+
+  .detail-profile p {
+    font-size: 15px;
+  }
+
+  #projects {
+    padding: 25px 15px;
+  }
+
+  .project-grid {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .left-col, .right-col {
+    width: 100%;
+  }
+
+  .left-col {
+    height: 1100px;
+  }
+
+  .right-col {
+    height: 900px;
+  }
+
+  .featured-project {
+    width: 100%;
+  }
+
+  .second-project {
+    width: 88%;
+  }
+
+  .third-project .project-info {
+    padding: 44px 40px;
+  }
+
+  #projects .description {
+    height: 40%;
+  }
+
+  #partners {
+    margin: 0;
+  }
+
+  #partners img {
+    width: 650px;
+  }
+
+  #copyright {
+    display: none;
+  }
+
+  #footer {
+    width: 100%;
+    padding: 52px 61px;
+  }
+
+  .vitals {
+    margin-right: 33px;
+  }
+
+}
+
+@media (max-width: 414px) {
+  .App {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header {
+    padding: 20px 26px;
+  }
+
+  #nav-logo {
+    margin-left: 0;
+    width: 60px;
+  }
+
+  .bm-burger-button {
+    right: 26px;
+    top: 33px;
+  } 
+
+  .cover {
+    width: 90%;
+  }
+
+  .cover h1 {
+    margin-top: 0;
+  }
+
+  .cover .parallax-image-container {
+    width: 124%;
+    margin-top: 76px;
+    min-height: 313px;
+  }
+
+  #why, #technologies, #team, #projects {
+    width: 90%;
+    min-height: 275px;
+  }
+
+  #why {
+    margin-bottom: 70px;
+  }
+
+  #why h1 span {
+    width: 54px;
+    right: 136px;
+  }
+
+  #storytelling, #immersive, #beauty {
+    padding: 5%;
+    align-items: center;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .left h2 {
+    text-align: center;
+  }
+
+  .right {
+    padding-left: 0;
+    align-items: center;
+    width: 100%;
+  }
+
+  .right p {
+    text-align: center;
+  }
+
+  #storytelling img, #beauty img, #immersive img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  #technologies h1 span {
+    bottom: 40px;
+  }
+
+  .grid {
+    width: 100%;
+  }
+
+  #action {
+    height: 400px;
+    /* border: 1px solid; */
+    margin-top: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  .content p {
+    margin-top: 0;
+  }   
+
+  .purple-strip {
+    margin-right: -450px;
+  }
+
+  #action-background {
+    left: -57%;
+  }
+
+  #team {
+    margin-top: 100px;
+  }
+
+  .profiles {
+    flex-wrap: wrap;
+  }
+
+  .member img {
+    height: auto;
+  }
+
+  #projects {
+    padding: 0;
+    margin-bottom: 90px
+  }
+
+  .second-project:hover {
+    width: 100%;
+  }
+
+  .third-project:hover {
+    width: 100%;
+  }
+
+  .third-project .project-info {
+    padding: 30px 40px;
+  }
+
+  .project-description p {
+    font-size: 16px;
+  }
+
+  #projects .description {
+    height: 59%;
+  }
+
+  #partners img {
+    width: 151%;
+  }
+
+  #footer {
+    width: 100%;
+    padding: 52px 5%;
+  }
+
+  #footer-content {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #social-media {
+    width: 100%;
+  }
+
+  #social-media span {
+    width: 300px;
+    top: 92px;
+    right: 35px;
+  }
+
+  #vitals-container {
+    flex-wrap: wrap;
+  } 
+
+  #vitals-container:nth-child(3) {
+    margin-right: 0;
+  }
+
+  .vitals {
+    margin-right: 40px;
   }
   
 }
