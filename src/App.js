@@ -59,6 +59,10 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, true);
+    this.setState({ coverElements: document.getElementById("cover-elements") });
+     if (this.state.coverElements) {
+       console.log(this.state.coverElements.style.transform);
+     }
   }
 
   componentWillUnmount() {
@@ -67,24 +71,25 @@ class App extends Component {
 
   handleScroll = () => {
     let windowScroll = window.scrollY;
-    let itemTranslate = -1 * windowScroll/10;
+    let itemTranslate = -1 * windowScroll;
 
     this.setState({
       transform: itemTranslate
     });
   }
 
-
   handleScrollToElement(id) {
     scrollToElement(id);
   }
 
-
   move = () => {
+    // console.log('Y: ', this.props.position.y, ', X: ', this.props.position.x);
     const div =  document.getElementById("cover-elements");
-    const moveByY = (this.props.position.y - div.offsetTop) + div.clientHeight/2;
-    const moveByX = (this.props.position.x - div.offsetLeft);
-    div.style.transform = `translate(${moveByX/800}%, ${moveByY/800}%)`;
+    const moveByY = (this.props.position.y - this.state.coverElements.offsetTop) + this.state.coverElements.clientHeight/2;
+    // console.log('MoveByY is a result of the mouse y position: ', this.props.position.y, ', minus the elements offset top of: ', this.state.coverElements.offsetTop, ', plus the client height divided by two: ', this.state.coverElements.clientHeight/2);
+    const moveByX = (this.props.position.x - this.state.coverElements.offsetLeft);
+    // console.log('MoveByX is a result of the mouse x position: ', this.props.position.x, ', minus the elements offset left of: ', this.state.coverElements.offsetLeft);
+    div.style.transform = `translate(${moveByX/300}%, ${-moveByY/300}%)`;
   }
 
   render() {
@@ -111,10 +116,10 @@ class App extends Component {
           <h1>We build VR experiences<br/>from your story</h1>
           <p>Whatever you are trying to say, let's say it together</p>
           <button>Learn more</button>
-          <div className="parallax-image-container" onMouseMove={() => this.move()} >
+          <div className="parallax-image-container">
             <img src={cover} className="cover-image" alt="cover" />
-            <img src={scorllEl} alt="cover" style={{transform: 'translateY(' + this.state.transform + 'px)'}} ref={this.myRef} id="scroll"/>
-            <img src={hoverEl} id="cover-elements" alt="cover" ref={this.myRef}/>
+            <img src={scorllEl} alt="cover" style={{transform: 'translateY(' + this.state.transform / 10 + 'px)'}} ref={this.myRef} id="scroll"/>
+            <img src={hoverEl} alt="cover" style={{transform: 'translateX(' + this.state.transform / 25 + 'px)'}} ref={this.myRef}/>
           </div>
         </div>
         <div id="why" ref={this.what}>
