@@ -51,18 +51,21 @@ class App extends Component {
     super(props)
     this.state = {
       transform: 0,
-      coverElements: null
+      coverElements: null,
+      scrollIntervalID: null
     }
     this.myRef = React.createRef();
     this.what = React.createRef();
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, true);
-    this.setState({ coverElements: document.getElementById("cover-elements") });
-     if (this.state.coverElements) {
-       console.log(this.state.coverElements.style.transform);
-     }
+    // window.addEventListener('scroll', this.handleScroll, true);
+    // this.setState({ coverElements: document.getElementById("cover-elements") });
+    //  if (this.state.coverElements) {
+    //    console.log(this.state.coverElements.style.transform);
+    //  }
+
+    this.setState({ scrollIntervalID: setInterval(this.handleScroll, 10)});
   }
 
   componentWillUnmount() {
@@ -78,8 +81,15 @@ class App extends Component {
     });
   }
 
-  handleScrollToElement(id) {
-    scrollToElement(id);
+  handleScrollToElement(id, duration) {
+    if (!duration) {
+      scrollToElement(id);
+    } else {
+      scrollToElement(id, {
+        ease: 'in-sine',
+        duration: duration
+      })
+    }
   }
 
   move = () => {
@@ -115,7 +125,7 @@ class App extends Component {
         <div className="cover">
           <h1>We build VR experiences<br/>from your story</h1>
           <p>Whatever you are trying to say, let's say it together</p>
-          <button>Learn more</button>
+          <button onClick={() => this.handleScrollToElement('#why', 2500)}>Learn more</button>
           <div className="parallax-image-container">
             <img src={cover} className="cover-image" alt="cover" />
             <img src={scorllEl} alt="cover" style={{transform: 'translateY(' + this.state.transform / 10 + 'px)'}} ref={this.myRef} id="scroll"/>
@@ -171,7 +181,7 @@ class App extends Component {
           </div>
           <div className="content">
               <p>We want to build awesome things and we belive <br/> in the power of immersive technologies to deliver messages.</p>
-              <button>Show me how it works</button>
+              <button onClick={() => this.handleScrollToElement('#projects')}>Show me how it works</button>
           </div>
         </div>
         <div id="team">
@@ -252,7 +262,7 @@ class App extends Component {
             <div className="project-grid">
               <div className="left-col">
                 <div className="featured-project">
-                  <img src={featured} alt="project-image"/>
+                  <img src={featured} alt="project"/>
                   <div className="project-info">
                     <div className="project-title">
                       <p>Web VR</p>
@@ -274,7 +284,7 @@ class App extends Component {
                   </div>
                 </div>
                 <div className="third-project">
-                  <img src={featured} alt="project-image"/>
+                  <img src={featured} alt="project"/>
                   <div className="project-info">
                     <div className="project-title">
                       <p>VR</p>
@@ -295,7 +305,7 @@ class App extends Component {
               </div>
               <div className="right-col">
                 <div className="second-project">
-                  <img src={featured} alt="project-image"/>
+                  <img src={featured} alt="project"/>
                   <div className="project-info">
                     <div className="project-title">
                       <p>3D</p>
