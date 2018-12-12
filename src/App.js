@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
+
+/* Modules */
+import ScrollTrigger from 'react-scroll-trigger';
 import * as scrollToElement from 'scroll-to-element';
-import { slide as Menu } from 'react-burger-menu';
+import { bubble as Menu } from 'react-burger-menu';
 
-/* Images */
-import logo from './assets/Logo.png';
+/* Components */
+import Navigation from './components/Navigation/Navigation';
+import Cover from './components/Cover/Cover';
 
-import cover from './assets/parallax/Capa1.png';
-import hoverEl from './assets/parallax/Capa3.png';
-import scorllEl from './assets/parallax/Capa2.png';
+/* Storytelling */
+import story from './assets/storytelling/C1.png';
+import storyDrawing from './assets/storytelling/C2.png';
+import storyRect from './assets/storytelling/C3.png';
 
-import story from './assets/story.png';
+/* Immersive */
+import immersiveBackground from './assets/immersive/Background.png';
+import squareLeft from './assets/immersive/Square-Left.png';
+import squareCenter from './assets/immersive/Square-Center.png';
+import squareRight from './assets/immersive/Square-Right.png';
+import squareShadowLeft from './assets/immersive/SquareShadow-Left.png';
+import squareShadowCenter from './assets/immersive/SquareShadow-Center.png';
+import squareShadowRight from './assets/immersive/SquareShadow-Right.png';
+
 import beauty from './assets/beauty.png';
 import immersive from './assets/immersive.png';
 
@@ -44,95 +57,100 @@ import twitter from './assets/footer/twitter.png';
 import whiteLogo from './assets/footer/footer-logo.png';
 
 import './App.css';
+import './queries.css';
 
 class App extends Component {
   
   constructor (props) {
     super(props)
     this.state = {
-      transform: 0,
-      coverElements: null,
-      scrollIntervalID: null
+      immersiveAnimated: false,
+      menuOpen: false
     }
-    this.myRef = React.createRef();
-    this.what = React.createRef();
+
+    this.storyRectangles = null;
+    this.storyDrawing = null;
+    this.story = null;
   }
 
   componentDidMount() {
-    // window.addEventListener('scroll', this.handleScroll, true);
-    // this.setState({ coverElements: document.getElementById("cover-elements") });
-    //  if (this.state.coverElements) {
-    //    console.log(this.state.coverElements.style.transform);
-    //  }
-
-    this.setState({ scrollIntervalID: setInterval(this.handleScroll, 10)});
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll, true);
-  }
-
-  handleScroll = () => {
-    let windowScroll = window.scrollY;
-    let itemTranslate = -1 * windowScroll;
-
-    this.setState({
-      transform: itemTranslate
-    });
+    this.storyRectangles = document.getElementById('storytelling-one');
+    this.storyDrawing = document.getElementById('storytelling-two');
+    this.story = document.getElementById('story');
   }
 
   handleScrollToElement(id, duration) {
     if (!duration) {
       scrollToElement(id);
+      // this.setState({ menuOpen: false });
     } else {
       scrollToElement(id, {
         ease: 'in-sine',
         duration: duration
-      })
+      });
+      // this.setState({ menuOpen: false });
     }
   }
 
   move = () => {
-    // console.log('Y: ', this.props.position.y, ', X: ', this.props.position.x);
-    const div =  document.getElementById("cover-elements");
-    const moveByY = (this.props.position.y - this.state.coverElements.offsetTop) + this.state.coverElements.clientHeight/2;
-    // console.log('MoveByY is a result of the mouse y position: ', this.props.position.y, ', minus the elements offset top of: ', this.state.coverElements.offsetTop, ', plus the client height divided by two: ', this.state.coverElements.clientHeight/2);
-    const moveByX = (this.props.position.x - this.state.coverElements.offsetLeft);
-    // console.log('MoveByX is a result of the mouse x position: ', this.props.position.x, ', minus the elements offset left of: ', this.state.coverElements.offsetLeft);
-    div.style.transform = `translate(${moveByX/300}%, ${-moveByY/300}%)`;
+    // const rectRectangles = this.state.storyRectangles.getBoundingClientRect();
+    // const rectDrawing = this.state.storyDrawing.getBoundingClientRect();
+    const rect = this.story.getBoundingClientRect();
+    // const moveByX = (this.props.position.x - this.state.storyRectangles.offsetLeft);
+    const moveByX = (this.props.position.x - rect.x);
+    const moveByXNegative = (rect.x - this.props.position.x);
+    // console.log('MoveByX is a result of the mouse x position: ', this.props.position.x, ', minus the elements offset left of: ', this.state.storyRectangles.offsetLeft, ' Rect: ', rect.x);
+    this.storyRectangles.style.transform = `translateX(${moveByX/200}%)`;
+    this.storyDrawing.style.transform = `translateX(${moveByX/300}%)`;
+    this.story.style.transform = `translateX(${moveByXNegative/500}%)`;
+  }
+
+  squareJump = (position) => {
+    const square = document.getElementById(`square-${position}`);
+    const shadow = document.getElementById(`shadow-${position}`);
+
+    square.style.transform = `translateY(-20%)`;
+    setTimeout(() => {
+      square.style.transform = `translateY(0%)`;
+    }, 250);
+
+    shadow.style.transform = `translateX(-1%)`;
+    setTimeout(() => {
+      shadow.style.transform = `translateX(0%)`;
+    }, 250);
+  }
+
+  onEnterViewport = (progress, velocity) => {
+    if (progress.progress >= 0.4 && !this.state.immersiveAnimated) {
+      window.requestAnimationFrame(() => {
+        this.squareJump('left');
+        setTimeout(() => this.squareJump('right'), 200);
+        setTimeout(() => this.squareJump('center'), 400);
+      });
+      console.log('Focused!', progress.progress);
+      this.setState({ immersiveAnimated: true });
+    }
+  }
+
+  onExitViewport = () => {
+    console.log('Out!');
+    this.setState({ immersiveAnimated: false });
   }
 
   render() {
+
     return (
       <div className="App">
         <Menu right noOverlay>
-            <p className="link" onClick={() => this.handleScrollToElement('#why')}>What we do</p>
-            <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who we are</p>
-            <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Public projects</p>
-            <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Our partners</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#why')}>What</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Projects</p>
+            <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Partners</p>
             <button>Contact us</button>
         </Menu>
-        <header className="header">
-          <img src={logo} className="App-logo" alt="logo" id="nav-logo" />
-          <div id="main-menu">
-            <p className="link" onClick={() => this.handleScrollToElement('#why')}>What we do</p>
-            <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who we are</p>
-            <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Public projects</p>
-            <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Our partners</p>
-            <button>Contact us</button>
-          </div>
-        </header>
-        <div className="cover">
-          <h1>We build VR experiences<br/>from your story</h1>
-          <p>Whatever you are trying to say, let's say it together</p>
-          <button onClick={() => this.handleScrollToElement('#why', 2500)}>Learn more</button>
-          <div className="parallax-image-container">
-            <img src={cover} className="cover-image" alt="cover" />
-            <img src={scorllEl} alt="cover" style={{transform: 'translateY(' + this.state.transform / 10 + 'px)'}} ref={this.myRef} id="scroll"/>
-            <img src={hoverEl} alt="cover" style={{transform: 'translateX(' + this.state.transform / 25 + 'px)'}} ref={this.myRef}/>
-          </div>
-        </div>
-        <div id="why" ref={this.what}>
+        <Navigation/>
+        <Cover handleScrollToElement={this.handleScrollToElement} />
+        <div id="why">
           <h1>We use the emerging experience of VR<span></span></h1>
           <p>to create applications and interactions that help our partners <br/>transform their message into something unique.</p>
         </div>
@@ -141,7 +159,11 @@ class App extends Component {
             <h2>Storytelling</h2>
             <p>Leverage story to fully engage <br/>and reach your audience.</p>
           </div>
-          <img src={story} alt="story"/>
+          <div className="story-container" onMouseMove={() => this.move()}>
+            <img src={story} alt="cover" id="story"/>
+            <img src={storyDrawing} alt="cover" id="storytelling-two"/>
+            <img src={storyRect} alt="cover" id="storytelling-one"/>
+          </div>
         </div>
         <div id="beauty">
           <img src={beauty} alt="beauty"/>
@@ -150,13 +172,26 @@ class App extends Component {
             <p>VR comes through our eyes and we <br/>must focuse on delivering the most <br/>beautiful products possible</p>
           </div>
         </div>
-        <div id="immersive">
-          <div className="left">
-            <h2>Immersive Technology</h2>
-            <p>Few platforms allow your users to immserve themselves fully and be 100% enaged with your message.</p>
+        <ScrollTrigger onProgress={this.onEnterViewport} onExit={this.onExitViewport}>
+          <div id="immersive">
+            <div className="left">
+              <h2>Immersive Technology</h2>
+              <p>Few platforms allow your users to immserve themselves fully and be 100% enaged with your message.</p>
+            </div>
+            <div className="immersive-container">
+              <img src={immersiveBackground} alt="cover" id="immersive-background"/>
+              <img src={squareLeft} alt="cover" id="square-left"/>
+              <img src={squareShadowLeft} alt="cover" id="shadow-left"/>
+              <img src={squareRight} alt="cover" id="square-right"/>
+              <img src={squareShadowRight} alt="cover" id="shadow-right"/>
+              <img src={squareCenter} alt="cover" id="square-center"/>
+              <img src={squareShadowCenter} alt="cover" id="shadow-center"/>
+              <div id="left" onMouseOver={() => this.squareJump('left')}></div>
+              <div id="right" onMouseOver={() => this.squareJump('right')}></div>
+              <div id="center" onMouseOver={() => this.squareJump('center')}></div>
+            </div>
           </div>
-          <img src={immersive} alt="immersive"/>
-        </div>
+        </ScrollTrigger>
         <div id="technologies">
           <div className="title">
             <h1>Obssesed with tech<span></span></h1>
