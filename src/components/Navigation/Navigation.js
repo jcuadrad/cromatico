@@ -14,10 +14,10 @@ class Navigation extends Component {
             <header className="header">
             <img src={logo} className="App-logo" alt="logo" id="nav-logo" />
             <div id="main-menu">
-              <p className="link" onClick={() => this.handleScrollToElement('#why')}>What we do</p>
-              <p className="link" onClick={() => this.handleScrollToElement('#technologies')}>Who we are</p>
-              <p className="link" onClick={() => this.handleScrollToElement('#projects')}>Public projects</p>
-              <p className="link" onClick={() => this.handleScrollToElement('#partners')}>Our partners</p>
+              <p className="link" onClick={() => this.props.handleScrollToElement('#why', 1000)}>What we do</p>
+              <p className="link" onClick={() => this.props.handleScrollToElement('#technologies', 1700)}>Who we are</p>
+              <p className="link" onClick={() => this.props.handleScrollToElement('#projects', 2500)}>Public projects</p>
+              <p className="link" onClick={() => this.props.handleScrollToElement('#partners', 2500)}>Our partners</p>
               <button>Contact us</button>
             </div>
           </header>

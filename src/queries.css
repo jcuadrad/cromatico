@@ -43,6 +43,10 @@
         bottom: 5.8vw;
         left: 20.8vw;
     }
+
+    .beauty-container {
+        height: 26.5vw;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -72,6 +76,10 @@
         bottom: 6.8vw;
         left: 19.7vw;
     }
+
+    .beauty-container {
+        height: 24vw;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -88,6 +96,10 @@
     .immersive-container #center {
         bottom: 4.6vw;
         left: 30.8vw;
+    }
+
+    .beauty-container {
+        height: 32vw;
     }
 }
 
@@ -111,6 +123,10 @@
         left: 29.7vw;
         width: 3vw;
         height: 3vw;
+    }
+
+    .beauty-container {
+        height: 401px;
     }
 }
 

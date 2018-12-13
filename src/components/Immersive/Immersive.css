@@ -1,0 +1,121 @@
+/* How this was done */
+
+  #immersive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 25px 178px;
+    margin-bottom: 173px;
+  }
+  
+  #immersive {
+    opacity: 0;
+    transform: translateY(15px);
+  
+    transition: opacity 0.5s linear, transform 0.5s ease;
+  }
+ 
+  .immersive-container {
+    width: 53%;
+    height: 26.5vw;
+    position: relative;
+  }
+  
+  #immersive img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .immersive-container #left {
+    /* border: 1px solid; */
+    position: absolute;
+    width: 1.7vw;
+    height: 1.7vw;
+    bottom: 9.8vw;
+    left: 6.6vw;
+  }
+  
+  .immersive-container #right {
+    /* border: 1px solid; */
+    position: absolute;
+    width: 1.7vw;
+    height: 1.7vw;
+    bottom: 6.8vw;
+    left: 22.9vw;
+  }
+  
+  .immersive-container #center {
+    /* border: 1px solid; */
+    position: absolute;
+    width: 1.7vw;
+    height: 1.7vw;
+    bottom: 4.1vw;
+    left: 22.6vw;
+  }
+  
+  #square-left, #square-right, #square-center {
+    transition: transform .2s;
+  }
+  
+  #shadow-left, #shadow-right, #shadow-center {
+    transition: transform .2s;
+  }
+
+@media (max-width: 1024px) {
+  #immersive {
+    padding: 25px 60px;
+  }
+
+  #immersive img {
+    width: 420px;
+    margin-left: 88px;
+  }
+}
+
+@media(max-width: 768px) {
+  #immersive {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 100px;
+  }
+
+  #immersive {
+    height: 630px;
+    align-items: center;
+  }
+
+  .immersive-container {
+      width: 420px;
+      height: 331px;
+      position: relative;
+  }
+
+  #immersive img {
+    margin-left: 0;
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 414px) {
+  #immersive {
+    padding: 5%;
+    align-items: center;
+  }
+
+  .immersive-container {
+    width: 100%;
+    height: 277px;
+  }
+
+  #immersive img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+}

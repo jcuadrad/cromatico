@@ -1,0 +1,65 @@
+/* Why */
+
+#why {
+    min-height: 367px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    opacity: 0;
+    transform: translateY(15px);
+  
+    transition: opacity 0.5s linear, transform 0.5s ease;
+  }
+
+  #why h1 {
+    position: relative;
+  }
+
+  #why p {
+    width: 700px;
+  }
+  
+  #underline-what {
+    background-color: rgba(138, 43, 226, 0.2);
+    width: 0;
+    height: 24px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+
+    transition: width 1s linear 0.4s;
+  }
+  
+  @media(max-width: 768px) {
+    #why {
+      width: 700px;
+      min-height: 275px;
+    }
+  
+    #underline-what {
+      width: 389px;
+      right: 155px;
+    }
+  }
+  
+  @media (max-width: 414px) {
+    #why {
+      width: 100%;
+      min-height: 275px;
+    }
+  
+    #why {
+      margin-bottom: 70px;
+    }
+
+    #why p {
+        width: 100%;
+    }
+  
+    #underline-what {
+      width: 54px;
+      right: 136px;
+    }
+  }

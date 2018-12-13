@@ -1,0 +1,404 @@
+/* Projects */
+
+#projects {
+    padding: 25px 214px;
+    margin-top: 90px;
+
+    opacity: 0;
+    transform: translateY(15px);
+  
+    transition: opacity 0.5s linear, transform 0.5s ease;
+}
+  
+  #projects .title {
+    align-items: flex-start;
+  }
+  
+  #projects .title h2 {
+    font-weight: 300;
+    font-size: 55px;
+    margin: 0;
+    padding-right: 102px;
+    text-align: left;
+  }
+  
+  .project-grid {
+    height: 1200px;
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+  }
+  
+  .left-col {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .right-col {
+    width: 45%;
+  }
+  
+  .featured-project {
+    width: 100%;
+    height: 60%;
+    background-color: #424242;
+    margin-top: 120px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .featured-project:hover .project-info {
+    height: 100%;
+    width: 80%;
+  }
+  
+  .featured-project:hover .project-description {
+    opacity: 1;
+  
+    transition: opacity .1s linear .5s;
+  }
+  
+  .featured-project img {
+    height: 100%;
+  }
+  
+  .third-project {
+    height: 30%;
+    width: 50%;
+    background-color: #97fe91;
+    overflow: hidden;
+    position: relative;
+  
+    transition: width .4s;
+  }
+  
+  .third-project .project-title {
+    margin-top: 180px;
+  
+    transition: margin-top .4s;
+  }
+  
+  .third-project:hover {
+    width: 65%;
+  }
+  
+  .third-project:hover .project-title {
+    margin-top: 0;
+  }
+  
+  .third-project:hover .project-info {
+    height: 100%;
+    width: 60%;
+  }
+  
+  .third-project:hover .project-description {
+    opacity: 1;
+  
+    transition: opacity .1s linear .5s;
+  }
+  
+  .third-project .project-info {
+    height: 100%;
+    width: 100%;
+    background-color: #97fe91;
+  
+    transition: height .4s, width .4s;
+  }
+  
+  .third-project .project-info .project-title > *, .third-project .project-info .project-description > * {
+    color: #424242
+  }
+  
+  .third-project img {
+    height: 100%;
+  }
+  
+  .third-project .button:hover .button-text {
+    margin-left: 10px;
+    color: #424242 !important;
+  }
+  
+  .second-project {
+    width: 100%;
+    height: 50%;
+    background-color: #5700df;
+    overflow: hidden;
+    position: relative;
+  
+    transition: width .4s;
+  }
+  
+  .second-project .project-info {
+    height: 100%;
+    width: 100%;
+    background-color: #5700df;
+  
+    transition: height .4s, width .4s;
+  }
+  
+  .second-project:hover .project-info {
+    height: 100%;
+    width: 40%;
+  }
+  
+  .second-project:hover .project-description {
+    opacity: 1;
+  
+    transition: opacity .1s linear .5s;
+  }
+  
+  .second-project img {
+    height: 100%;
+  }
+  
+  .second-project .project-title > * {
+    font-size: 40px;
+  
+    transition: font-size .4s;
+  }
+  
+  .second-project:hover .project-title > * {
+    font-size: initial;
+  }
+  
+  #projects .description {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 75px;
+    text-align: start;
+  }
+  
+  .description h3 {
+    color: #383838;
+    /* font-weight: 500; */
+    font-size: 33px;
+  }
+  
+  #projects .description p {
+    text-align: start;
+  }
+  
+  .button {
+    width: 100px;
+    height: 100px;
+    /* text-align: start; */
+    margin: 2px 0;
+    /* vertical-align: middle; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .teal {
+    background-color: #53cdff;
+  }
+  
+  .button-background {
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    z-index: -1;
+  
+    transition: width .2s;
+  }
+  
+  .button-text {
+    margin-left: 0px;
+  
+    transition: margin-left .2s, color .2s;
+  }
+  
+  .button:hover .button-background {
+    width: 100%;
+  }
+  
+  .button:hover .button-text {
+    margin-left: 10px;
+    color: white;
+  }
+  
+  .button:hover .button-text {
+    margin-left: 10px;
+    color: white;
+  }
+  
+  .button p {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 2px 0;
+  }
+  
+  .project-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 60px 53px;
+  }
+  
+  .featured-project .project-info {
+    height: 250px;
+    width: 250px;
+    background-color: #424242;
+  
+    transition: height .4s, width .4s;
+  }
+  
+  .project-description {
+    opacity: 0;
+  
+    transition: opacity .1s linear;
+  }
+  
+  .project-title > *, .project-info > * {
+    margin: 0;
+    text-align: start;
+    color: white;
+  }
+  
+@media (max-width: 1297px) {
+  #projects {
+    padding: 25px 110px;
+  }
+
+  .project-grid {
+    height: 1000px;
+  }
+  
+  .second-project:hover .project-info {
+    height: 100%;
+    width: 55%;
+  }
+
+  .third-project .project-title {
+    margin-top: 130px;
+    transition: margin-top .4s;
+  }
+
+  .third-project .project-info {
+    padding: 30px 31px;
+  }
+
+  .third-project:hover {
+    width: 85%;
+  }
+}
+  
+@media (max-width: 1024px) {
+  #projects {
+    padding: 25px 60px;
+  }
+
+  #projects .description {
+    padding: 37px 50px;
+  }
+
+  .project-info {
+    padding: 50px 40px;
+  }
+
+  .third-project .project-info {
+    padding: 15px 27px;
+  }
+}
+  
+@media (max-width: 768px) {
+  #projects {
+    width: 700px;
+    min-height: 275px;
+  }
+
+  #projects {
+    padding: 25px 15px;
+  }
+
+  .project-grid {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .left-col, .right-col {
+    width: 100%;
+  }
+
+  .left-col {
+    height: 1100px;
+  }
+
+  .right-col {
+    height: 900px;
+  }
+
+  .featured-project {
+    width: 100%;
+  }
+
+  .second-project {
+    width: 88%;
+  }
+
+  .third-project .project-info {
+    padding: 44px 40px;
+  }
+
+  #projects .description {
+    height: 40%;
+  }
+}
+
+@media (max-width: 414px) {
+  #projects {
+    width: 375px;
+    min-height: 275px;
+    padding: 25px;
+  }
+
+  #projects {
+    padding: 0;
+    margin-bottom: 90px
+  }
+
+  #projects .title {
+    align-items: center;
+  }
+
+  #projects .title h2 {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .second-project:hover {
+    width: 100%;
+  }
+
+  .third-project:hover {
+    width: 100%;
+  }
+
+  .third-project .project-info {
+    padding: 30px 40px;
+  }
+
+  .project-description p {
+    font-size: 16px;
+  }
+
+  #projects .description {
+    height: 59%;
+  }
+}
+
+
