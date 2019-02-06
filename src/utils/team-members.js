@@ -8,7 +8,7 @@ export const TeamMembers = [
         photo: team1,
         name: 'Juan Cuadra', 
         title: 'Interactive Media', 
-        description: 'Over 5 year experience working in Interactive Media with companies in the US & Germany. He studied storytelling & screenwriting in the London Film Academy.',
+        description: 'Over 5 year experience working with Interactive Media and Software Development with companies in the US & Germany.',
         social: {
             instagram: 'https://www.instagram.com/juancuadra/',
             linkedin: 'https://www.linkedin.com/in/juancuadrad/',

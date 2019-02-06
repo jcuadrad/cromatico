@@ -30,7 +30,7 @@ class Action extends Component {
                     <img src={geometry} alt="details"/>
                     </div>
                     <div className="content">
-                        <p>We want to build awesome things and we belive <br/> in the power of immersive technologies to deliver messages.</p>
+                        <p>Only one mission in our minds: <br/> Build AWESOME things.</p>
                         <button onClick={() => this.props.handleScrollToElement('#projects')}>Show me how it works</button>
                     </div>
                 </div>
