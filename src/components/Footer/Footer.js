@@ -45,11 +45,15 @@ class Footer extends Component {
                             </div>
                             <div className="vitals">
                             <p>Write</p>
-                            <h4>hello@cromatico.io</h4>
+                            <a href="mailto:hello@cromatico.io">
+                                <h4>hello@cromatico.io</h4>
+                            </a>
                             </div>
                             <div className="vitals">
                             <p>Talk</p>
-                            <h4>+(505) 8548-9394</h4>
+                            <a href="tel:+50585489394">
+                                <h4>+(505) 8548-9394</h4>
+                            </a>
                             </div>
                         </div>
                         </div>

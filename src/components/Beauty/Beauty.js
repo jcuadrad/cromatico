@@ -96,7 +96,10 @@ class Beauty extends Component {
                     </div>
                     <div className="right">
                         <h2>Beauty</h2>
-                        <p>VR comes through our eyes and we must focuse on delivering the most beautiful products possible</p>
+                        <p>Aestethic appeal is essential in today's world. With so many brands compeating for attention, the products that standout
+                            are ususally the most memorable and pleasing to use and look at. With great arists in our team, your message will never look
+                            as beautiful.
+                        </p>
                     </div>
                 </div>
             </ScrollTrigger>

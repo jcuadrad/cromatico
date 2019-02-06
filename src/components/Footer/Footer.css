@@ -46,6 +46,11 @@
   .vitals {
     margin-right: 59px;
   }
+
+  .vitals a {
+    color: inherit;
+    text-decoration: none;
+  }
   
   .footer-logo {
     margin-left: 20vw;

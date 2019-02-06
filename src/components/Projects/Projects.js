@@ -5,7 +5,8 @@ import './Projects.css';
 import ScrollTrigger from 'react-scroll-trigger';
 
 /* Projects */
-import featured from '../../assets/projects/feature-project.png';
+import { ProjectList } from '../../utils/projects';
+import featured from '../../assets/projects/ibaVR.jpg';
 
 class Projects extends Component {
     constructor(props) {
@@ -13,11 +14,10 @@ class Projects extends Component {
         this.state = {  }
     }
 
-
     reveal = (progress) => {
         const div = document.getElementById('projects');
         if (progress.progress >= 0.2 && !this.state.immersiveAnimated) {
-        div.classList.add('reveal');
+            div.classList.add('reveal');
         }
     }
 
@@ -26,47 +26,44 @@ class Projects extends Component {
             <ScrollTrigger onProgress={this.reveal}>
                 <div id="projects">
                     <div className="title">
-                        <h2>Our <br/>Projects</h2>
+                        <h2>Projects <br/>We've Worked On</h2>
                     </div>
                     <div className="project-grid">
                     <div className="left-col">
                         <div className="featured-project">
-                            <img src={featured} alt="project"/>
+                            <img src={ProjectList[0].photo} alt="project"/>
                             <div className="project-info">
                                 <div className="project-title">
-                                <p>Web VR</p>
-                                <h2>Project ABC</h2>
+                                <p>{ProjectList[0].type}</p>
+                                <h2>{ProjectList[0].name}</h2>
                                 </div>
                                 <div className="project-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus non ante sed lacinia. Sed nulla lorem, 
-                                    accumsan sed libero quis, euismod fermentum nunc. Cras posuere ac est a porttitor. Aenean eget iaculis massa. 
-                                    Praesent scelerisque libero laoreet, vulputate neque sit amet, viverra metus. Aenean ut lectus id lorem posuere 
-                                    placerat eget ac neque.</p>
+                                <p>{ProjectList[0].description}</p>
                                     <div className="button">
                                     <div className="button-background"></div>
-                                    <div className="button-text">
+                                    <a className="button-text" target="blank" href={ProjectList[0].link}>
                                         <p>Show me more</p>
                                         <p>→</p>
-                                    </div>
+                                    </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="third-project">
-                            <img src={featured} alt="project"/>
+                            <img src={ProjectList[2].photo} alt="project"/>
                             <div className="project-info">
                                 <div className="project-title">
-                                <p>VR</p>
-                                <h2>Project VRFX</h2>
+                                <p>{ProjectList[2].type}</p>
+                                <h2>{ProjectList[2].name}</h2>
                                 </div>
                                 <div className="project-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>{ProjectList[2].description}</p>
                                     <div className="button">
                                     <div className="button-background"></div>
-                                    <div className="button-text">
+                                    <a className="button-text" target="blank" href={ProjectList[2].link}>
                                         <p>Show me more</p>
                                         <p>→</p>
-                                    </div>
+                                    </a>
                                     </div>
                                 </div>
                             </div>
@@ -74,20 +71,20 @@ class Projects extends Component {
                     </div>
                     <div className="right-col">
                         <div className="second-project">
-                        <img src={featured} alt="project"/>
+                        <img src={ProjectList[1].photo} alt="project"/>
                         <div className="project-info">
                             <div className="project-title">
-                            <p>3D</p>
-                            <h2>Project ZYX</h2>
+                            <p>{ProjectList[1].type}</p>
+                            <h2>{ProjectList[1].name}</h2>
                             </div>
                             <div className="project-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus non ante sed lacinia. Sed nulla lorem.</p>
+                            <p>{ProjectList[1].description}</p>
                                 <div className="button">
                                 <div className="button-background"></div>
-                                <div className="button-text">
+                                <a className="button-text" target="blank" href={ProjectList[1].link}>
                                     <p>Show me more</p>
                                     <p>→</p>
-                                </div>
+                                </a>
                                 </div>
                             </div>
                         </div>

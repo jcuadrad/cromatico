@@ -52,7 +52,7 @@ class Storytelling extends Component {
                 <div id="storytelling">
                     <div className="left">
                     <h2>Storytelling</h2>
-                    <p>Leverage story to fully engage and reach your audience.</p>
+                    <p>Whether it is your idea or a collaboration with us, we will make sure to craft an engaging story that captures the imagination of your audience.</p>
                     </div>
                     <div className="story-container" onMouseMove={() => this.move()}>
                     <img src={story} alt="cover" id="story"/>

@@ -20,7 +20,11 @@ class What extends Component {
         if (progress.progress >= 0.2 && !this.state.revealed) {
           div.classList.add('reveal');
           this.setState({ revealed: true });
-          underline.style.width = '605px';
+          if (window.innerWidth > 578) {
+            underline.style.width = '540px';
+          } else {
+            underline.style.width = '225px';
+          }
         }
     }
 
@@ -28,8 +32,12 @@ class What extends Component {
         return ( 
             <ScrollTrigger onProgress={this.reveal}>
                 <div id="why" className="step-up">
-                    <h1>We use the emerging experience of VR<span id="underline-what"></span></h1>
-                    <p>to create applications and interactions that help our partners transform their message into something unique.</p>
+                    <div className="underline-container">
+                        <h1>We build interactive experiences.</h1>
+                        <span id="underline-what"></span>
+                    </div>
+                    <p>Using cutting-edge technologies, we help our partners transform their message into something unique.</p>
+                    {/* {/* <h1>We leverage both time-tested and new tools to create a lasting impression with our work</h1> */}
                 </div>
             </ScrollTrigger>
          );

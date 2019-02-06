@@ -12,6 +12,7 @@
   
   #projects .title {
     align-items: flex-start;
+    margin-bottom: 45px;
   }
   
   #projects .title h2 {
@@ -214,6 +215,8 @@
   
   .button-text {
     margin-left: 0px;
+    color: inherit;
+    text-decoration: none;
   
     transition: margin-left .2s, color .2s;
   }
@@ -373,6 +376,7 @@
 
   #projects .title {
     align-items: center;
+    margin: 0;
   }
 
   #projects .title h2 {

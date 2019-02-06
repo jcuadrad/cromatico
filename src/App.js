@@ -60,6 +60,7 @@ class App extends Component {
         <Navigation handleScrollToElement={this.handleScrollToElement} />
         <Cover handleScrollToElement={this.handleScrollToElement} />
         <What/>
+        <h2 id="title-steps">We leverage both time-tested and new tools to create a lasting impression with our work</h2>
         <Storytelling position={this.props.position} />
         <Beauty position={this.props.position} />
         <Immersive />

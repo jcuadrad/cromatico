@@ -38,7 +38,7 @@ class Technologies extends Component {
                         <h1>Obssesed with tech<span id="underline-tech"></span></h1>
                     </div>
                     <p>We have mastered the tools for the job.</p>
-                    <p>We develop with state of the art frameworks for all the leading platforms in the world.</p>
+                    <p>We develop with state of the art frameworks and for all the leading platforms in the world.</p>
                     <div className="grid">
                         <img src={unity} alt="unity"/>
                         <img src={unreal} alt="unreal"/>

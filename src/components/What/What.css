@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #231f20;
+    margin-bottom: 150px;
   
     opacity: 0;
     transform: translateY(15px);
@@ -15,26 +17,35 @@
 
   #why h1 {
     position: relative;
+    z-index: 9999;
+    color: white;
   }
 
   #why p {
     width: 700px;
+    color: white;
   }
   
   #underline-what {
-    background-color: rgba(138, 43, 226, 0.2);
+    background-color: #5700df;
     width: 0;
     height: 24px;
-    bottom: 0;
-    right: 0;
+    top: 19px;
+    right: -5px;
     position: absolute;
 
     transition: width 1s linear 0.4s;
   }
+
+  .underline-container {
+    position: relative;
+  }
   
   @media(max-width: 768px) {
     #why {
-      width: 700px;
+      width: 102%;
+      margin-left: -1%;
+      padding: 0 25px;
       min-height: 275px;
     }
   
@@ -47,7 +58,9 @@
   @media (max-width: 414px) {
     #why {
       width: 100%;
-      min-height: 275px;
+      min-height: 420px;
+      margin: 0;
+      padding: 0 28px;
     }
   
     #why {
@@ -60,6 +73,7 @@
   
     #underline-what {
       width: 54px;
-      right: 136px;
+      right: 31px;
+      top: 65px;
     }
   }

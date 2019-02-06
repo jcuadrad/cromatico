@@ -40,6 +40,10 @@ button {
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* How this was done */
 
 .left {

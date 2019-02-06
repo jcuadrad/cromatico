@@ -4,12 +4,28 @@
   overflow: hidden;
 }
 
+.App #title-steps {
+  margin-bottom: 100px;
+  font-weight: 300;
+  font-size: 25px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
 @media(max-width: 768px) {
   .App {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media(max-width: 578px) {
+  .App #title-steps {
+    margin-bottom: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 }
 /* .App-logo {

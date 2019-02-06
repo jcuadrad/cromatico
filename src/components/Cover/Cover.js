@@ -39,8 +39,8 @@ class Cover extends Component {
     render() { 
         return ( 
         <div className="cover">
-            <h1>We build VR experiences<br/>from your story</h1>
-            <p>Whatever you are trying to say, let's say it together</p>
+            <h1>Jaw-dropping experiences<br/>to tell your story</h1>
+            <p>With tools ranging from VR to AR, we want to help you engage your audience.</p>
             <button onClick={() => this.props.handleScrollToElement('#why', 2500)}>Learn more</button>
             <div className="parallax-image-container">
               <img src={cover} className="cover-image" alt="cover" />

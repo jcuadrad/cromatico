@@ -105,6 +105,7 @@
   #immersive {
     padding: 5%;
     align-items: center;
+    margin-bottom: 15px;
   }
 
   .immersive-container {

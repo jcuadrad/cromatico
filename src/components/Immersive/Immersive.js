@@ -67,8 +67,8 @@ class Immersive extends Component {
             <ScrollTrigger onProgress={this.onEnterViewport} onExit={this.onExitViewport}>
                 <div id="immersive">
                     <div className="left">
-                    <h2>Immersive Technology</h2>
-                    <p>Few platforms allow your users to immserve themselves fully and be 100% enaged with your message.</p>
+                    <h2>Immersive Technologies</h2>
+                    <p>We love to use VR, AR and the Web because few platforms allow your users to immserve themselves fully and be 100% enaged with your message.</p>
                     </div>
                     <div className="immersive-container">
                     <img src={immersiveBackground} alt="cover" id="immersive-background"/>
