@@ -47,13 +47,13 @@ class Immersive extends Component {
                     setTimeout(() => this.squareJump('right'), 200);
                     setTimeout(() => this.squareJump('center'), 400);
                 });
-                console.log('Focused!', progress.progress);
+                // console.log('Focused!', progress.progress);
             }, 550)
         }
     }
 
     onExitViewport = () => {
-        console.log('Out!');
+        // console.log('Out!');
         this.setState({ immersiveAnimated: false });
     }
 

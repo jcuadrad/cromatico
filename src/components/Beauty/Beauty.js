@@ -40,7 +40,7 @@ class Beauty extends Component {
     }
 
     rotate = (element) => {
-        console.log('rotating!')
+        // console.log('rotating!')
         if (element === 'triangle') {
             this.triangle.style.transform = `rotate(${this.state.rotation}deg)`;
             if (this.state.rotation >= 2000) {
@@ -67,13 +67,13 @@ class Beauty extends Component {
                     this.rotate('triangle');
                     setTimeout(() => this.rotate(), 200);
                 });
-                console.log('Focused!', progress.progress);
+                // console.log('Focused!', progress.progress);
             }, 550)
         }
     }
 
     onExitViewport = () => {
-        console.log('Out!');
+        // console.log('Out!');
         this.setState({ beautyAnimated: false });
     }
 

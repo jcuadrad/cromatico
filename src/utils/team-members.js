@@ -28,18 +28,18 @@ export const TeamMembers = [
             web: ''
         }
     },
-    {
-        photo: team3,
-        name: 'Moamed Sampson', 
-        title: '3D Artist', 
-        description: '',
-        social: {
-            instagram: 'https://www.instagram.com/moamed.sampson/',
-            linkedin: '',
-            behance: '',
-            web: 'http://www.moamedsampson.com/'
-        }
-    },
+    // {
+    //     photo: team3,
+    //     name: 'Moamed Sampson', 
+    //     title: '3D Artist', 
+    //     description: '',
+    //     social: {
+    //         instagram: 'https://www.instagram.com/moamed.sampson/',
+    //         linkedin: '',
+    //         behance: '',
+    //         web: 'http://www.moamedsampson.com/'
+    //     }
+    // },
     {
         photo: team4,
         name: 'Alexander Dohr', 
