@@ -31,13 +31,13 @@ export const TeamMembers = [
     {
         photo: team3,
         name: 'Moamed Sampson', 
-        title: '3D Artist', 
-        description: '',
+        title: 'Motion Designer & 3D Artist', 
+        description: "♥ Storytelling. Worked for 8 years with studios, producers and agencies both national and international. I love the feeling of constant growth.",
         social: {
             instagram: 'https://www.instagram.com/moamed.sampson/',
-            linkedin: '',
+            linkedin: 'https://www.linkedin.com/in/moamedsampson/',
             behance: '',
-            web: 'http://www.moamedsampson.com/'
+            web: ''
         }
     },
     {
