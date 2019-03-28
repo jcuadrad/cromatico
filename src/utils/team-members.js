@@ -20,7 +20,7 @@ export const TeamMembers = [
         photo: team2,
         name: 'Sergio Perezalonso', 
         title: 'VR Engineer', 
-        description: '',
+        description: 'Gamer by heart, studied Computer Science in Berlin and has experience working on interactive VR experiences.',
         social: {
             instagram: '',
             linkedin: 'https://www.linkedin.com/in/sergio-perezalonso-705784175/',
@@ -40,16 +40,16 @@ export const TeamMembers = [
             web: ''
         }
     },
-    {
-        photo: team4,
-        name: 'Alexander Dohr', 
-        title: 'Creative Design', 
-        description: '',
-        social: {
-            instagram: '',
-            linkedin: 'https://www.linkedin.com/in/alexander-dohr-6581a0aa/',
-            behance: 'https://www.behance.net/adintermedia',
-            web: ''
-        }
-    }
+    // {
+    //     photo: team4,
+    //     name: 'Alexander Dohr', 
+    //     title: 'Creative Design', 
+    //     description: '',
+    //     social: {
+    //         instagram: '',
+    //         linkedin: 'https://www.linkedin.com/in/alexander-dohr-6581a0aa/',
+    //         behance: 'https://www.behance.net/adintermedia',
+    //         web: ''
+    //     }
+    // }
 ]
